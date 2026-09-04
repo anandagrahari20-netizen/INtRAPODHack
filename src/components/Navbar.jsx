@@ -6,7 +6,7 @@ function Navbar() {
 
       <div style={styles.logo}>
         <div style={styles.logoIcon}>▣</div>
-        <h2>Spendly</h2>
+        <h2>SpendWise</h2>
       </div>
 
       <div style={styles.links}>
