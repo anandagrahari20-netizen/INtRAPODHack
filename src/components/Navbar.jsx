@@ -39,9 +39,9 @@ function Navbar() {
           + Add Expense
         </button>
 
-        <div style={styles.profile}>
-          👤
-        </div>
+        <Link to="/Profile" style={styles.profile}>
+        👤
+        </Link>
 
       </div>
 
@@ -114,13 +114,15 @@ const styles = {
   },
 
   profile: {
-    width: "35px",
-    height: "35px",
+    width: "36px",
+    height: "36px",
     borderRadius: "50%",
     backgroundColor: "#E8DDD6",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    textDecoration: "none",
+    cursor: "pointer",
   },
 };
 
