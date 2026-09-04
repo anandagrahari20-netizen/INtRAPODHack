@@ -187,3 +187,108 @@ export const auditorNote = {
     "All debits reconcile with connected banking feeds (HDFC, Axis, UPI). Missing physical receipts will automatically trigger polite weekly nudges.",
   action: { label: "Reconcile Ledger", icon: "book-check" },
 };
+
+export const weeklySpending = {
+  total: "₹8,420",
+  days: [
+    { label: "M", amount: "₹740", value: 740 },
+    { label: "T", amount: "₹520", value: 520 },
+    { label: "W", amount: "₹1,120", value: 1120 },
+    { label: "T", amount: "₹820", value: 820 },
+    { label: "F", amount: "₹1,430", value: 1430 },
+    { label: "S", amount: "₹2,200", value: 2200, highlight: true },
+    { label: "S", amount: "₹1,000", value: 1000 },
+  ],
+};
+
+export const dashboardMeta = {
+  title: "Dashboard",
+  subtitle: "Overview of your monthly spending",
+  sync: "HDFC Bank synced today, 09:42 AM",
+};
+
+export const quickActions = [
+  { id: "add", label: "Add Expense", icon: "plus", primary: true },
+  { id: "scan", label: "Scan Receipt", icon: "scan" },
+  { id: "split", label: "Split Bill", icon: "split" },
+];
+
+export const dashboardStats = [
+  {
+    id: "remaining",
+    label: "Remaining Budget",
+    value: "₹16,140",
+    subtitle: "of ₹25,000 monthly limit",
+    progress: 0.65,
+    progressColor: "#6e4b2a",
+  },
+  {
+    id: "spent",
+    label: "Spent This Month",
+    value: "₹8,420",
+    subtitle: "34% of total budget",
+    progress: 0.34,
+    progressColor: "#b6432b",
+  },
+  {
+    id: "daily",
+    label: "Daily Average",
+    value: "₹1,202",
+    subtitle: "Target ceiling: ₹1,500 / day",
+    footer: "Within safe pacing",
+  },
+];
+
+export const categoryBudgets = [
+  { id: "food", label: "Food & Dining", spent: 3200, total: 9000, color: "#b6432b" },
+  { id: "shopping", label: "Shopping", spent: 2270, total: 6000, color: "#6e4b2a" },
+  { id: "bills", label: "Bills & Utilities", spent: 1680, total: 5000, color: "#3f8f79" },
+  { id: "transport", label: "Transport", spent: 1270, total: 5000, color: "#b08a5a" },
+];
+
+export const recentTransactions = [
+  {
+    id: "recent-amazon",
+    payee: "Amazon India",
+    category: "Shopping",
+    note: "Noise-cancelling headphones",
+    datetime: "16 Oct, 04:15 PM",
+    icon: "shopping-bag",
+    iconTint: "peach",
+    amount: "-₹4,500",
+    instrument: "ICICI Debit",
+  },
+  {
+    id: "recent-swiggy",
+    payee: "Swiggy Gourmet",
+    category: "Dining",
+    note: "Weekend gathering meal",
+    datetime: "15 Oct, 08:30 PM",
+    icon: "utensils",
+    iconTint: "peach",
+    amount: "-₹2,300",
+    instrument: "UPI · Split with 2",
+  },
+  {
+    id: "recent-reliance",
+    payee: "Reliance Smart",
+    category: "Groceries",
+    note: "Weekly essentials pantry refill",
+    datetime: "14 Oct, 11:20 AM",
+    icon: "shopping-cart",
+    iconTint: "mint",
+    amount: "-₹1,800",
+    instrument: "HDFC Card",
+  },
+  {
+    id: "recent-uber",
+    payee: "Uber India",
+    category: "Transport",
+    note: "Airport commute transfer",
+    datetime: "13 Oct, 06:45 AM",
+    icon: "car",
+    iconTint: "neutral",
+    amount: "-₹640",
+    instrument: "UPI Auto-pay",
+  },
+];

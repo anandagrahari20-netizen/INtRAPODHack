@@ -18,7 +18,7 @@ const controlIcons = {
 
 const FilterBar = () => {
   return (
-    <div className="flex flex-wrap items-center gap-3 rounded-lg border border-line/70 bg-surface p-3 shadow-[0_1px_2px_rgba(42,32,24,0.04)]">
+    <div className="flex flex-wrap items-center gap-3 rounded-xl border border-line/70 bg-surface p-3 shadow-[0_1px_2px_rgba(42,32,24,0.04)]">
       <div className="flex min-w-56 flex-1 items-center gap-2 rounded-lg bg-cream/60 px-4 py-2">
         <Search className="h-4 w-4 text-muted" />
         <input

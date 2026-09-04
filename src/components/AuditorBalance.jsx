@@ -5,7 +5,7 @@ const AuditorBalance = () => {
   const { title, description, action } = auditorNote;
 
   return (
-    <section className="flex flex-col gap-5 rounded-lg bg-chip/60 p-6 sm:flex-row sm:items-center sm:justify-between">
+    <section className="flex flex-col gap-5 rounded-xl bg-chip/60 p-6 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-start gap-4">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#f6dcc4] text-brand">
           <ScrollText className="h-5 w-5" />
