@@ -1,4 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+const navItems = [
+  { to: "/Dashboard", label: "Dashboard" },
+  { to: "/Expenses", label: "Expenses" },
+  { to: "/ScanReceipt", label: "Scan Receipt" },
+  { to: "/Budgets", label: "Budgets" },
+  { to: "/SplitBill", label: "Split Bill" },
+];
 
 function Navbar() {
   return (
@@ -11,25 +19,17 @@ function Navbar() {
 
       <div style={styles.links}>
 
-        <Link to="/Dashboard" style={styles.link}>
-          Dashboard
-        </Link>
-
-        <Link to="/Expenses" style={styles.link}>
-          Expenses
-        </Link>
-
-        <Link to="/ScanReceipt" style={styles.activeLink}>
-          Scan Receipt
-        </Link>
-
-        <Link to="/Budgets" style={styles.link}>
-          Budgets
-        </Link>
-
-        <Link to="/SplitBill" style={styles.link}>
-          Split Bill
-        </Link>
+        {navItems.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            style={({ isActive }) =>
+              isActive ? styles.activeLink : styles.link
+            }
+          >
+            {item.label}
+          </NavLink>
+        ))}
 
       </div>
 
@@ -85,6 +85,10 @@ const styles = {
     textDecoration: "none",
     color: "#241C18",
     fontSize: "14px",
+    padding: "10px 20px",
+    borderRadius: "20px",
+    backgroundColor: "transparent",
+    transition: "background-color 0.2s ease, color 0.2s ease",
   },
 
   activeLink: {
@@ -95,6 +99,7 @@ const styles = {
     borderRadius: "20px",
     fontSize: "15px",
     fontWeight: "600",
+    transition: "background-color 0.2s ease, color 0.2s ease",
   },
 
   rightSide: {

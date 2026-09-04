@@ -32,7 +32,7 @@ const SummaryCard = ({
   footer,
 }) => {
   return (
-    <section className="group flex flex-col rounded-lg border border-line/70 bg-surface p-5 shadow-[0_1px_2px_rgba(42,32,24,0.04),0_8px_24px_-12px_rgba(42,32,24,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(42,32,24,0.06),0_16px_32px_-14px_rgba(42,32,24,0.18)]">
+    <section className="group flex flex-col rounded-xl border border-line/70 bg-surface p-5 shadow-[0_1px_2px_rgba(42,32,24,0.04),0_8px_24px_-12px_rgba(42,32,24,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(42,32,24,0.06),0_16px_32px_-14px_rgba(42,32,24,0.18)]">
       <div className="flex items-start justify-between">
         <p className="text-xs font-semibold uppercase tracking-wider text-muted">
           {label}

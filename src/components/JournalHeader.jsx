@@ -22,7 +22,7 @@ const JournalHeader = () => {
             <button
               key={id}
               type="button"
-              className="inline-flex items-center gap-2 rounded-lg border border-line/70 bg-surface px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-chip"
+              className="inline-flex items-center gap-2 rounded-xl border border-line/70 bg-surface px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-chip"
             >
               <Icon className="h-4 w-4 text-muted" />
               {label}

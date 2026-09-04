@@ -215,7 +215,7 @@ const Pagination = () => {
 
 const ExpenseTable = () => {
   return (
-    <div className="overflow-hidden rounded-lg border border-line/70 bg-surface shadow-[0_1px_2px_rgba(42,32,24,0.04),0_8px_24px_-12px_rgba(42,32,24,0.12)]">
+    <div className="overflow-hidden rounded-xl border border-line/70 bg-surface shadow-[0_1px_2px_rgba(42,32,24,0.04),0_8px_24px_-12px_rgba(42,32,24,0.12)]">
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-cream/50">
