@@ -34,7 +34,7 @@ function ScanReceipt() {
           {/* Review */}
           {file && (
             <div>
-              <ReceiptReview />
+              <ReceiptReview file={file} />
             </div>
           )}
 
