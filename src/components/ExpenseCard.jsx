@@ -5,7 +5,7 @@ import {
   BadgeCheck,
   ArrowDown,
 } from "lucide-react";
-import { summaryCards } from "../data/demodata";
+import { useExpenses } from "../context/ExpenseContext.jsx";
 
 const icons = {
   wallet: <Wallet className="h-4 w-4" />,
@@ -79,6 +79,8 @@ const SummaryCard = ({
 };
 
 const ExpenseCard = () => {
+  const { summaryCards } = useExpenses();
+
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {summaryCards.map((card) => (

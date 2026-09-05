@@ -1,0 +1,54 @@
+[
+  {
+    "id": "5008edeb-0fda-4f6b-a2ef-8a79b42b6d7f",
+    "day": "05",
+    "date": "Sep 05, 2026",
+    "time": "05:30 AM",
+    "channel": "Manual",
+    "payee": "Volleyball",
+    "tag": null,
+    "note": "Added from the expense form",
+    "icon": "shopping-bag",
+    "iconTint": "peach",
+    "classification": {
+      "label": "Shopping",
+      "dot": "#d98a5b"
+    },
+    "instrument": {
+      "label": "UPI",
+      "icon": "card"
+    },
+    "documentation": {
+      "label": "Attached",
+      "status": "attached"
+    },
+    "amount": "₹550",
+    "negative": true
+  },
+  {
+    "id": "02069067-e70c-4cc9-b84d-774a93a4a341",
+    "day": "05",
+    "date": "Sep 05, 2026",
+    "time": "05:30 AM",
+    "channel": "Manual",
+    "payee": "Amul",
+    "tag": null,
+    "note": "Added from the expense form",
+    "icon": "utensils",
+    "iconTint": "peach",
+    "classification": {
+      "label": "Food & Dining",
+      "dot": "#b6432b"
+    },
+    "instrument": {
+      "label": "upi",
+      "icon": "card"
+    },
+    "documentation": {
+      "label": "Attached",
+      "status": "attached"
+    },
+    "amount": "₹200",
+    "negative": true
+  }
+]

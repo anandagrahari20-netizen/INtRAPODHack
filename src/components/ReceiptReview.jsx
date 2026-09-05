@@ -1,10 +1,29 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useExpenses } from "../context/ExpenseContext.jsx";
 
 function ReceiptReview() {
+  const navigate = useNavigate();
+  const { addExpense } = useExpenses();
   const [merchant, setMerchant] = useState("Starbucks");
   const [date, setDate] = useState("2026-09-04");
   const [category, setCategory] = useState("Food");
   const [total, setTotal] = useState("450");
+
+  const handleSave = async () => {
+    await addExpense({
+      payee: merchant,
+      category,
+      amount: total,
+      date,
+      note: "Imported from receipt scan",
+      instrument: "Card",
+      channel: "Receipt",
+      documentation: "Attached",
+    });
+
+    navigate("/Expenses");
+  };
 
   return (
     <div className="mt-6 w-full rounded-2xl border border-[#e8ddd6] bg-white p-5">
@@ -79,7 +98,11 @@ function ReceiptReview() {
       </div>
 
       {/* Save */}
-      <button className="mt-6 w-full rounded-lg bg-[#8b6845] py-3 font-medium text-white hover:bg-[#755638]">
+      <button
+        type="button"
+        onClick={handleSave}
+        className="mt-6 w-full rounded-lg bg-[#8b6845] py-3 font-medium text-white hover:bg-[#755638]"
+      >
         Save Expense
       </button>
 

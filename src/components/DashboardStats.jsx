@@ -1,7 +1,9 @@
 import { BadgeCheck } from "lucide-react";
-import { dashboardStats } from "../data/demodata";
+import { useExpenses } from "../context/ExpenseContext.jsx";
 
 const DashboardStats = () => {
+  const { dashboardStats } = useExpenses();
+
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
       {dashboardStats.map((stat) => (

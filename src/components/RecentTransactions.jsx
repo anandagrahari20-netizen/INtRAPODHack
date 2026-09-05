@@ -5,7 +5,7 @@ import {
   Car,
   ChevronRight,
 } from "lucide-react";
-import { recentTransactions } from "../data/demodata";
+import { useExpenses } from "../context/ExpenseContext.jsx";
 
 const icons = {
   "shopping-bag": ShoppingBag,
@@ -21,6 +21,8 @@ const tints = {
 };
 
 const RecentTransactions = () => {
+  const { recentTransactions } = useExpenses();
+
   return (
     <section className="rounded-xl border border-line/70 bg-surface p-6 shadow-[0_1px_2px_rgba(42,32,24,0.04),0_8px_24px_-12px_rgba(42,32,24,0.12)]">
       <div className="flex items-center justify-between">
@@ -36,42 +38,48 @@ const RecentTransactions = () => {
         </button>
       </div>
 
-      <ul className="mt-4 divide-y divide-line/70">
-        {recentTransactions.map((tx) => {
-          const Icon = icons[tx.icon];
-          return (
-            <li key={tx.id} className="flex items-center justify-between py-4">
-              <div className="flex items-center gap-3">
-                <span
-                  className={`grid h-10 w-10 shrink-0 place-items-center rounded-full ${tints[tx.iconTint]}`}
-                >
-                  <Icon className="h-4 w-4" />
-                </span>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <p className="font-serif text-base font-semibold text-ink">
-                      {tx.payee}
+      {recentTransactions.length === 0 ? (
+        <p className="mt-4 rounded-lg border border-dashed border-line/70 px-4 py-8 text-center text-sm text-muted">
+          No recent transactions yet.
+        </p>
+      ) : (
+        <ul className="mt-4 divide-y divide-line/70">
+          {recentTransactions.map((tx) => {
+            const Icon = icons[tx.icon];
+            return (
+              <li key={tx.id} className="flex items-center justify-between py-4">
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`grid h-10 w-10 shrink-0 place-items-center rounded-full ${tints[tx.iconTint]}`}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <p className="font-serif text-base font-semibold text-ink">
+                        {tx.payee}
+                      </p>
+                      <span className="rounded-md bg-chip px-2 py-0.5 text-xs font-medium text-muted">
+                        {tx.category}
+                      </span>
+                    </div>
+                    <p className="mt-0.5 text-xs text-muted">
+                      {tx.note} • {tx.datetime}
                     </p>
-                    <span className="rounded-md bg-chip px-2 py-0.5 text-xs font-medium text-muted">
-                      {tx.category}
-                    </span>
                   </div>
-                  <p className="mt-0.5 text-xs text-muted">
-                    {tx.note} • {tx.datetime}
-                  </p>
                 </div>
-              </div>
 
-              <div className="text-right">
-                <p className="font-serif text-base font-semibold text-debit">
-                  {tx.amount}
-                </p>
-                <p className="mt-0.5 text-xs text-muted">{tx.instrument}</p>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+                <div className="text-right">
+                  <p className="font-serif text-base font-semibold text-debit">
+                    {tx.amount}
+                  </p>
+                  <p className="mt-0.5 text-xs text-muted">{tx.instrument}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </section>
   );
 };

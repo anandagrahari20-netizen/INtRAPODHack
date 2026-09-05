@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
-import { weeklySpending } from "../data/demodata";
+import { useExpenses } from "../context/ExpenseContext.jsx";
 
 const WeeklySpending = () => {
+  const { weeklySpending } = useExpenses();
   const { total, days } = weeklySpending;
-  const max = Math.max(...days.map((d) => d.value));
+  const max = Math.max(...days.map((d) => d.value), 0);
 
   return (
     <section className="rounded-xl border border-line/70 bg-surface p-6 shadow-[0_1px_2px_rgba(42,32,24,0.04),0_8px_24px_-12px_rgba(42,32,24,0.12)]">
@@ -13,6 +14,12 @@ const WeeklySpending = () => {
         </h2>
         <span className="text-sm text-muted">Total: {total}</span>
       </div>
+
+      {days.every((day) => day.value === 0) && (
+        <p className="mt-4 rounded-lg border border-dashed border-line/70 px-4 py-8 text-center text-sm text-muted">
+          No spending data yet.
+        </p>
+      )}
 
       <div className="mt-8 flex h-56 items-end justify-between gap-3">
         {days.map((day, i) => (
@@ -32,7 +39,7 @@ const WeeklySpending = () => {
                 day.highlight ? "bg-[#e8703a]" : "bg-[#e7ddd2]"
               }`}
               initial={{ height: 0 }}
-              animate={{ height: `${(day.value / max) * 100}%` }}
+              animate={{ height: max ? `${(day.value / max) * 100}%` : "0%" }}
               transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.06 }}
             />
           </div>

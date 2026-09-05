@@ -1,11 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { UserCircle2 } from "lucide-react";
 
 const navItems = [
   { to: "/Dashboard", label: "Dashboard" },
   { to: "/Expenses", label: "Expenses" },
   { to: "/ScanReceipt", label: "Scan Receipt" },
   { to: "/Budgets", label: "Budgets" },
-  { to: "/SplitBill", label: "Split Bill" },
 ];
 
 function Navbar() {
@@ -35,12 +35,13 @@ function Navbar() {
 
       <div style={styles.rightSide}>
 
-        <button style={styles.addButton}>
+        <Link to="/AddExpense" style={styles.addButton}>
           + Add Expense
-        </button>
+        </Link>
 
         <Link to="/Profile" style={styles.profile}>
-        👤
+          <UserCircle2 size={18} strokeWidth={1.8} />
+          <span>Profile</span>
         </Link>
 
       </div>
@@ -116,16 +117,20 @@ const styles = {
     borderRadius: "20px",
     fontSize: "15px",
     cursor: "pointer",
+    textDecoration: "none",
   },
 
   profile: {
-    width: "36px",
-    height: "36px",
-    borderRadius: "50%",
-    backgroundColor: "#E8DDD6",
-    display: "flex",
+    display: "inline-flex",
     alignItems: "center",
-    justifyContent: "center",
+    gap: "8px",
+    padding: "9px 14px",
+    borderRadius: "999px",
+    backgroundColor: "#E8DDD6",
+    color: "#241C18",
+    fontSize: "14px",
+    fontWeight: "500",
+    display: "flex",
     textDecoration: "none",
     cursor: "pointer",
   },

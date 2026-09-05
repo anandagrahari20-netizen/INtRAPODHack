@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
 
     if (email && password) {
-      navigate("/dashboard");
+      navigate("/Dashboard");
     } else {
       alert("Please enter email and password");
     }
@@ -19,26 +19,16 @@ function Login() {
 
   return (
     <div style={styles.page}>
-
       <div style={styles.card}>
 
-        {/* Logo */}
-        <div style={styles.logo}>
-          S
-        </div>
+        <div style={styles.logo}>S</div>
 
         <h1 style={styles.title}>Welcome Back</h1>
 
-        <p style={styles.subtitle}>
-          Login to continue to Spendly
-        </p>
+        <p style={styles.subtitle}>Login to continue to Spendly</p>
 
         <form onSubmit={handleLogin}>
-
-          {/* Email */}
-          <label style={styles.label}>
-            Email
-          </label>
+          <label style={styles.label}>Email</label>
 
           <input
             type="email"
@@ -48,10 +38,7 @@ function Login() {
             style={styles.input}
           />
 
-          {/* Password */}
-          <label style={styles.label}>
-            Password
-          </label>
+          <label style={styles.label}>Password</label>
 
           <input
             type="password"
@@ -61,46 +48,15 @@ function Login() {
             style={styles.input}
           />
 
-          {/* Remember + Forgot */}
-          <div style={styles.options}>
-
-            <label style={styles.remember}>
-              <input type="checkbox" />
-              Remember me
-            </label>
-
-            <a href="#" style={styles.forgot}>
-              Forgot password?
-            </a>
-
-          </div>
-
-          {/* Login Button */}
-          <button
-            type="submit"
-            style={styles.loginButton}
-          >
+          <button type="submit" style={styles.loginButton}>
             Login
           </button>
-
         </form>
 
-        {/* Signup */}
-        <p style={styles.signup}>
-          Don't have an account?{" "}
-
-          <Link to="/signup" style={styles.signupLink}>
-            Sign up
-          </Link>
-        </p>
-
-        {/* Back */}
         <Link to="/" style={styles.back}>
           ← Back to Home
         </Link>
-
       </div>
-
     </div>
   );
 }
@@ -170,26 +126,6 @@ const styles = {
     outline: "none",
     marginBottom: "18px",
     fontSize: "14px",
-  },
-
-  options: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: "22px",
-    fontSize: "12px",
-  },
-
-  remember: {
-    color: "#766A63",
-    display: "flex",
-    alignItems: "center",
-    gap: "5px",
-  },
-
-  forgot: {
-    color: "#8B6845",
-    textDecoration: "none",
   },
 
   loginButton: {
