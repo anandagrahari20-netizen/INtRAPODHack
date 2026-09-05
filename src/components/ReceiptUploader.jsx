@@ -7,6 +7,8 @@ function ReceiptUploader({ setFile }) {
     }
   };
 
+  //RECEIPT
+
   return (
     <div className="w-full rounded-2xl border border-[#e8ddd6] bg-white p-5">
       
